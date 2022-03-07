@@ -15,6 +15,10 @@ NEWSPIDER_MODULE = 'webscarpe.spiders'
 FEED_FORMAT = "csv"
 FEED_URI = "scrap1.csv"
 
+FEED_FORMAT = "json"
+FEED_URI = "scrap1.json"
+
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'webscarpe (+http://www.yourdomain.com)'
