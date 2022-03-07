@@ -15,8 +15,8 @@ NEWSPIDER_MODULE = 'webscarpe.spiders'
 FEED_FORMAT = "csv"
 FEED_URI = "scrap1.csv"
 
-FEED_FORMAT = "json"
-FEED_URI = "scrap2.json"
+'''FEED_FORMAT = "json"
+FEED_URI = "scrap2.json"'''
 
 
 

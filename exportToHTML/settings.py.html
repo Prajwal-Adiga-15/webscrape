@@ -1,0 +1,115 @@
+<html>
+<head>
+<title>settings.py</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #808080; font-style: italic;}
+.s1 { color: #000000;}
+.s2 { color: #008000; font-weight: bold;}
+.s3 { color: #000080; font-weight: bold;}
+</style>
+</head>
+<body bgcolor="#ffffff">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#c0c0c0" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+settings.py</font>
+</center></td></tr></table>
+<pre><span class="s0"># Scrapy settings for webscarpe project</span>
+<span class="s0">#</span>
+<span class="s0"># For simplicity, this file contains only settings considered important or</span>
+<span class="s0"># commonly used. You can find more settings consulting the documentation:</span>
+<span class="s0">#</span>
+<span class="s0">#     https://docs.scrapy.org/en/latest/topics/settings.html</span>
+<span class="s0">#     https://docs.scrapy.org/en/latest/topics/downloader-middleware.html</span>
+<span class="s0">#     https://docs.scrapy.org/en/latest/topics/spider-middleware.html</span>
+
+BOT_NAME = <span class="s2">'webscarpe'</span>
+
+SPIDER_MODULES = [<span class="s2">'webscarpe.spiders'</span>]
+NEWSPIDER_MODULE = <span class="s2">'webscarpe.spiders'</span>
+
+FEED_FORMAT = <span class="s2">&quot;csv&quot;</span>
+FEED_URI = <span class="s2">&quot;scrap1.csv&quot;</span>
+
+FEED_FORMAT = <span class="s2">&quot;json&quot;</span>
+FEED_URI = <span class="s2">&quot;scrap2.json&quot;</span>
+
+
+
+<span class="s0"># Crawl responsibly by identifying yourself (and your website) on the user-agent</span>
+<span class="s0">#USER_AGENT = 'webscarpe (+http://www.yourdomain.com)'</span>
+
+<span class="s0"># Obey robots.txt rules</span>
+ROBOTSTXT_OBEY = <span class="s3">True</span>
+
+<span class="s0"># Configure maximum concurrent requests performed by Scrapy (default: 16)</span>
+<span class="s0">#CONCURRENT_REQUESTS = 32</span>
+
+<span class="s0"># Configure a delay for requests for the same website (default: 0)</span>
+<span class="s0"># See https://docs.scrapy.org/en/latest/topics/settings.html#download-delay</span>
+<span class="s0"># See also autothrottle settings and docs</span>
+<span class="s0">#DOWNLOAD_DELAY = 3</span>
+<span class="s0"># The download delay setting will honor only one of:</span>
+<span class="s0">#CONCURRENT_REQUESTS_PER_DOMAIN = 16</span>
+<span class="s0">#CONCURRENT_REQUESTS_PER_IP = 16</span>
+
+<span class="s0"># Disable cookies (enabled by default)</span>
+<span class="s0">#COOKIES_ENABLED = False</span>
+
+<span class="s0"># Disable Telnet Console (enabled by default)</span>
+<span class="s0">#TELNETCONSOLE_ENABLED = False</span>
+
+<span class="s0"># Override the default request headers:</span>
+<span class="s0">#DEFAULT_REQUEST_HEADERS = {</span>
+<span class="s0">#   'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',</span>
+<span class="s0">#   'Accept-Language': 'en',</span>
+<span class="s0">#}</span>
+
+<span class="s0"># Enable or disable spider middlewares</span>
+<span class="s0"># See https://docs.scrapy.org/en/latest/topics/spider-middleware.html</span>
+<span class="s0">#SPIDER_MIDDLEWARES = {</span>
+<span class="s0">#    'webscarpe.middlewares.WebscarpeSpiderMiddleware': 543,</span>
+<span class="s0">#}</span>
+
+<span class="s0"># Enable or disable downloader middlewares</span>
+<span class="s0"># See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html</span>
+<span class="s0">#DOWNLOADER_MIDDLEWARES = {</span>
+<span class="s0">#    'webscarpe.middlewares.WebscarpeDownloaderMiddleware': 543,</span>
+<span class="s0">#}</span>
+
+<span class="s0"># Enable or disable extensions</span>
+<span class="s0"># See https://docs.scrapy.org/en/latest/topics/extensions.html</span>
+<span class="s0">#EXTENSIONS = {</span>
+<span class="s0">#    'scrapy.extensions.telnet.TelnetConsole': None,</span>
+<span class="s0">#}</span>
+
+<span class="s0"># Configure item pipelines</span>
+<span class="s0"># See https://docs.scrapy.org/en/latest/topics/item-pipeline.html</span>
+<span class="s0">#ITEM_PIPELINES = {</span>
+<span class="s0">#    'webscarpe.pipelines.WebscarpePipeline': 300,</span>
+<span class="s0">#}</span>
+
+<span class="s0"># Enable and configure the AutoThrottle extension (disabled by default)</span>
+<span class="s0"># See https://docs.scrapy.org/en/latest/topics/autothrottle.html</span>
+<span class="s0">#AUTOTHROTTLE_ENABLED = True</span>
+<span class="s0"># The initial download delay</span>
+<span class="s0">#AUTOTHROTTLE_START_DELAY = 5</span>
+<span class="s0"># The maximum download delay to be set in case of high latencies</span>
+<span class="s0">#AUTOTHROTTLE_MAX_DELAY = 60</span>
+<span class="s0"># The average number of requests Scrapy should be sending in parallel to</span>
+<span class="s0"># each remote server</span>
+<span class="s0">#AUTOTHROTTLE_TARGET_CONCURRENCY = 1.0</span>
+<span class="s0"># Enable showing throttling stats for every response received:</span>
+<span class="s0">#AUTOTHROTTLE_DEBUG = False</span>
+
+<span class="s0"># Enable and configure HTTP caching (disabled by default)</span>
+<span class="s0"># See https://docs.scrapy.org/en/latest/topics/downloader-middleware.html#httpcache-middleware-settings</span>
+<span class="s0">#HTTPCACHE_ENABLED = True</span>
+<span class="s0">#HTTPCACHE_EXPIRATION_SECS = 0</span>
+<span class="s0">#HTTPCACHE_DIR = 'httpcache'</span>
+<span class="s0">#HTTPCACHE_IGNORE_HTTP_CODES = []</span>
+<span class="s0">#HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'</span>
+</pre>
+</body>
+</html>
