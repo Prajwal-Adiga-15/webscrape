@@ -1,24 +1,32 @@
 import scrapy
-#from items import GfgItem
 
 
-class QuotesSpider(scrapy.Spider):
-    name = "webscrape"
-    #def start_requests(self):
-    start_urls = ['https://in.seamsfriendly.com/collections/shorts']
-        #for url in urls:
-            #yield scrapy.Request(url = url, callback=self.parse)
-    
+class SeamsShortsSpider(scrapy.Spider):
+    name = 'seams_shorts'
+    allowed_domains = ['in.seamsfriendly.com']
+    start_urls = ['http://in.seamsfriendly.com/collections/shorts']
+
     def parse(self, response):
-        title: response.css("#shopify-section-collection-template a::text").extract()
-        price: response.css("#shopify-section-collection-template .Text--subdued::text").extract()
-        img_url: response.css('img::attr(src)').extract()
+        # title=response.css('.ProductItem__Title a::text').extract()
+        # image_url=response.css('.ProductItem__Image').xpath('@src').getall()
+        # price=response.css('.ProductItem__Price::text').extract()
 
-        for item in zip(title,price,img_url):
-            scrap_info = {
-                'title' : item[0],
-                'price' : item[1],
-                'img_url' : item[2]
+        # for item in zip(title,price):
+        #     scraped_info ={
+        #         'title':item[0],
+        #         'price':item[1],
+        #     }
+
+        # yield scraped_info
+        products = response.css('.ProductItem')
+        title = response.css('.ProductItem__Title a::text').extract()
+        price = response.css('.ProductItem__Price::text').extract()
+        image_url = response.css('.ProductItem__Image').xpath('@src').getall()
+
+        for i in range(len(products)):
+            yield {
+                'Title': title[i],
+                'Price': price[i][1:],
+                'image_url': image_url[i],
             }
-            yield scrap_info
 

@@ -12,6 +12,9 @@ BOT_NAME = 'webscarpe'
 SPIDER_MODULES = ['webscarpe.spiders']
 NEWSPIDER_MODULE = 'webscarpe.spiders'
 
+FEED_FORMAT = "csv"
+FEED_URI = "scrap1.csv"
+
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'webscarpe (+http://www.yourdomain.com)'
